@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* ========== СБРОС СТРЕЛОК У ЧИСЛОВЫХ ПОЛЕЙ ========== */
+/* Для Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+/* Для Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ========== ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ ========== */
+html, body {
+    background-color: white;
+    padding: 15px;
+}
+
+/* ========== ОБЩИЙ БЛОК КАЛЬКУЛЯТОРА ========== */
+#calculator {
+    display: flex;
+    flex-direction: column;
+    background-color: #8ae695;
+    border-radius: 10px;
+    position: absolute;
+    padding: 5px;
+}
+
+/* ========== БЛОКИ-СТРОКИ ========== */
+.block {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.block:first-child {
+    margin-top: 0;
+}
+
+/* ========== ЭЛЕМЕНТЫ ВНУТРИ БЛОКОВ ========== */
+.block_style {
+    display: block;
+    border: 1px dashed red;
+    border-radius: 10px;
+    padding: 7px;
+    margin-right: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: red;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+}
+.block .block_style:last-child {
+    margin-right: 0;
+}
+
+/* ========== ПОЛЕ ВЫБОРА ОПЕРАЦИИ ========== */
+#operationSelect {
+    width: 60px;
+}
+
+/* ========== КНОПКА ========== */
+#calcButton {
+    padding: 0 30px 0 30px;
+    display: block;
+    height: 30px;
+}
+
+/* ========== БЛОК РЕЗУЛЬТАТА ========== */
+#result {
+    display: block;
+    width: 100%;
+    height: 15vh;
+    overflow: hidden;
+    color: rgba(182, 118, 118, 0.6);  /* бледно-красный для старых записей */
+}
+#result div:first-child {
+    color: red;  /* последний результат ярко-красный */
+}
+/* Аналогично для нового id */
+#resultPanel {
+    display: block;
+    width: 100%;
+    height: 15vh;
+    overflow: hidden;
+    color: rgba(182, 118, 118, 0.6);
+}
+#resultPanel div:first-child {
+    color: red;
+}
+
+/* ========== КЛАСС ДЛЯ ОШИБОК ========== */
+.error {
+    display: block;
+    background-color: red !important;
+    color: wheat !important;
+    border: 1px dashed black;
+}
+
+/* ========== ВСПОМОГАТЕЛЬНЫЙ КЛАСС (маленький красный текст) ========== */
+.small_red {
+    color: rgba(182, 118, 118, 0.6);
+}

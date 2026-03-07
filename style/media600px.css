@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@media (max-width: 599px) {
+    html, body {
+        display: flex;
+        justify-content: center;
+    }
+    #calculator {
+        width: 80%;
+    }
+    .block {
+        flex-direction: column;
+        align-items: center;   
+        gap: 15px;
+    }
+}
