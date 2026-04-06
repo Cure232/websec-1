@@ -2,41 +2,30 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- Настройка отображения на мобильных устройствах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Основные стили калькулятора -->
     <link rel="stylesheet" href="style/style.css">
-    <!-- Дополнительные стили для экранов шириной до 600px -->
     <link rel="stylesheet" href="style/media600px.css">
     <title>Лабораторная работа №1: Калькулятор</title>
 </head>
 <body>
-    <!-- Форма калькулятора, обрабатывается JavaScript -->
-    <form id="calculator">
-        <!-- Строка с полями ввода и выбором операции -->
-        <div class="block">
-            <!-- Первое число -->
-            <input type="number" name="input_one" id="firstNumber" class="input_field block_style" placeholder="123">
-            <!-- Выпадающий список операций -->
-            <select name="input_block" id="operationSelect" class="select_field block_style">
+    <form class="calculator" id="calculator">
+        <div class="calculator__row">
+            <input type="number" name="input_one" class="calculator__input" placeholder="123">
+            <select class="calculator__select">
                 <option value="+" selected>+</option>
                 <option value="-">-</option>
                 <option value="*">*</option>
                 <option value="/">/</option>
             </select>
-            <!-- Второе число -->
-            <input type="number" name="input_two" id="secondNumber" class="input_field block_style" placeholder="456">
+            <input type="number" name="input_two" class="calculator__input" placeholder="456">
         </div>
-        <!-- Строка с кнопкой -->
-        <div class="block">
-            <button type="submit" id="calcButton" class="btn_style block_style" name="calculate">подсчитать</button>
+        <div class="calculator__row">
+            <button type="submit" class="calculator__button" name="calculate">подсчитать</button>
         </div>
-        <!-- Строка для вывода результата и истории -->
-        <div class="block">
-            <div id="resultPanel" class="result_box block_style"></div>
+        <div class="calculator__row">
+            <div id="resultPanel" class="calculator__result"></div>
         </div>
     </form>
-    <!-- Скрипт калькулятора -->
     <script src="./js/calculator.js"></script>
 </body>
 </html>

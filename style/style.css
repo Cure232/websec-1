@@ -1,26 +1,21 @@
 @charset "utf-8";
 
-/* ========== СБРОС СТРЕЛОК У ЧИСЛОВЫХ ПОЛЕЙ ========== */
-/* Для Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
 }
-/* Для Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* ========== ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ ========== */
 html, body {
     background-color: white;
     padding: 15px;
 }
 
-/* ========== ОБЩИЙ БЛОК КАЛЬКУЛЯТОРА ========== */
-#calculator {
+.calculator {
     display: flex;
     flex-direction: column;
     background-color: #8ae695;
@@ -29,18 +24,19 @@ html, body {
     padding: 5px;
 }
 
-/* ========== БЛОКИ-СТРОКИ ========== */
-.block {
+.calculator__row {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-.block:first-child {
+.calculator__row:first-child {
     margin-top: 0;
 }
 
-/* ========== ЭЛЕМЕНТЫ ВНУТРИ БЛОКОВ ========== */
-.block_style {
+.calculator__input,
+.calculator__select,
+.calculator__button,
+.calculator__result {
     display: block;
     border: 1px dashed red;
     border-radius: 10px;
@@ -54,54 +50,39 @@ html, body {
     letter-spacing: 0.5px;
     box-sizing: border-box;
 }
-.block .block_style:last-child {
+
+.calculator__row > :last-child {
     margin-right: 0;
 }
 
-/* ========== ПОЛЕ ВЫБОРА ОПЕРАЦИИ ========== */
-#operationSelect {
+.calculator__select {
     width: 60px;
 }
 
-/* ========== КНОПКА ========== */
-#calcButton {
-    padding: 0 30px 0 30px;
-    display: block;
+.calculator__button {
+    padding: 0 30px;
     height: 30px;
 }
 
-/* ========== БЛОК РЕЗУЛЬТАТА ========== */
-#result {
-    display: block;
-    width: 100%;
-    height: 15vh;
-    overflow: hidden;
-    color: rgba(182, 118, 118, 0.6);  /* бледно-красный для старых записей */
-}
-#result div:first-child {
-    color: red;  /* последний результат ярко-красный */
-}
-/* Аналогично для нового id */
-#resultPanel {
+.calculator__result {
     display: block;
     width: 100%;
     height: 15vh;
     overflow: hidden;
     color: rgba(182, 118, 118, 0.6);
 }
-#resultPanel div:first-child {
+.calculator__result div:first-child {
     color: red;
 }
 
-/* ========== КЛАСС ДЛЯ ОШИБОК ========== */
-.error {
-    display: block;
+.calculator__input--error,
+.calculator__select--error {
     background-color: red !important;
     color: wheat !important;
     border: 1px dashed black;
 }
 
-/* ========== ВСПОМОГАТЕЛЬНЫЙ КЛАСС (маленький красный текст) ========== */
+/* Вспомогательный класс (если нужен) */
 .small_red {
     color: rgba(182, 118, 118, 0.6);
 }

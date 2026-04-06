@@ -5,12 +5,26 @@
         display: flex;
         justify-content: center;
     }
-    #calculator {
+    .calculator {
         width: 80%;
     }
-    .block {
+    .calculator__row {
         flex-direction: column;
-        align-items: center;   
+        align-items: stretch;
         gap: 15px;
+    }
+
+    .calculator__input,
+    .calculator__select,
+    .calculator__button {
+        margin-right: 0;
+    }
+
+    .calculator__select {
+        align-self: center;
+    }
+
+    .calculator__button {
+        width: 100%;
     }
 }
