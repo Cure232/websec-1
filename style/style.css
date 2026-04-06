@@ -81,8 +81,3 @@ html, body {
     color: wheat !important;
     border: 1px dashed black;
 }
-
-/* Вспомогательный класс (если нужен) */
-.small_red {
-    color: rgba(182, 118, 118, 0.6);
-}
